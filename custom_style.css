@@ -1,0 +1,29 @@
+.body {
+    margin: 0;
+}
+
+.navBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 150px;
+}
+
+.wrapper {
+    margin-left: 150px;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-gap: 10px;
+    grid-template-areas:
+      "header"
+      "content";
+}
+
+.header {
+    grid-area: header;
+}
+
+.content {
+    grid-area: content;
+}

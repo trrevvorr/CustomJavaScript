@@ -179,48 +179,21 @@ function applyGrid() {
   var $body = $('body.Info');
   $body.children('br').remove();
   
-  // make the body the wrapper
-  $body.css({
-    "margin": "0",
-  });
-  
   var $navBar = $('.anchors');
   var $navBarDiv = $('<div class="navBar">');
   $navBar.wrap($navBarDiv);
-  $navBarDiv.css({
-    "position": "fixed",
-    "top": "0",
-    "left": "0",
-    "height": "100%",
-    "width": "150px",
-  });
   
   var $header = $('table.title');
   var $headerDiv = $('<div class="header">');
   $header.wrap($headerDiv);
-  $headerDiv.css({
-    "grid-area": "header",
-  });
   
   var $content = $('.header').nextAll();
   var $contentDiv = $('<div class="content">');
   $content.wrapAll($contentDiv);
-  $contentDiv.css({
-    "grid-area": "content",
-  });
 
   var $wrapper = $('.header, .content');
   var $wrapperDiv = $('<div class="wrapper">');
   $wrapper.wrapAll($wrapperDiv);
-  $wrapperDiv.css({
-    "display": "grid",
-    "grid-template-columns": "150px 1fr",
-    "grid-gap": "10px",
-    "grid-template-areas":
-      `"header"
-      "content"`,
-  });
-  
   
 }
 

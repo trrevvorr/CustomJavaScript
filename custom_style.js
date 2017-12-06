@@ -1,3 +1,5 @@
+import('https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js');
+
 function styleTables() {
     var $tables = $('table');
     // itterate through tables

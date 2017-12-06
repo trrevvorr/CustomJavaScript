@@ -11,9 +11,11 @@
 }
 
 .wrapper {
-    margin-left: 150px;
+    position: relative;
+    left: 150px;
+    overflow-x: wrap;
     display: grid;
-    grid-template-columns: 150px 1fr;
+    grid-template-columns: calc(100% - 80px);
     grid-gap: 10px;
     grid-template-areas:
       "header"

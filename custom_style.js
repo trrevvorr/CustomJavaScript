@@ -202,7 +202,7 @@ function applyGrid() {
     "grid-area": "header",
   });
   
-  var $content = $headerDiv.nextAll();
+  var $content = $('.header').nextAll();
   var $contentDiv = $('<div class="content">');
   $content.wrapAll($contentDiv);
   $contentDiv.css({

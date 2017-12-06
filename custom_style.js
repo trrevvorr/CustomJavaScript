@@ -202,16 +202,16 @@ function applyGrid() {
     "grid-area": "header",
   });
   
-  var $content = $header.nextAll();
+  var $content = $headerDiv.nextAll();
   var $contentDiv = $('<div class="content">');
   $content.wrapAll($contentDiv);
   $contentDiv.css({
     "grid-area": "content",
   });
 
-  var $wrapper = $headerDiv.add($contentDiv);
+  var $wrapper = $('.header, .content');
   var $wrapperDiv = $('<div class="wrapper">');
-  $wrapper.wrap($wrapperDiv);
+  $wrapper.wrapAll($wrapperDiv);
   $wrapperDiv.css({
     "display": "grid",
     "grid-template-columns": "150px 1fr",

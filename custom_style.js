@@ -36,16 +36,11 @@ function styleTables() {
 
 function navBar() {
     // add the "DLG ######" to the nav bar
-    $('.anchors').prepend($('.title a').clone())
+    $('.anchors').prepend($('.title a').clone());
     
     var styleNode = $(`<style type="text/css">
         div.anchors,
         #ScrollLinks {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 150px;
-            height: 100%;
             background-color: #50719b;
             border-right: 1px solid #50719b;
             line-height: 0;
@@ -109,16 +104,9 @@ function navBar() {
 
 function applyCss() {
     var styleNode = $(`<style type="text/css">
-        body {
-            margin-left: 160px;
-        }
         body.Info {
             font-family: "Roboto",sans-serif;
             font-size: 14px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            background-color: white;
-            padding: 20px;
         }
         
         table.title[style],
@@ -182,6 +170,60 @@ function applyCss() {
     $('html').append(styleNode);
 }
 
+function applyGrid() {
+  
+  // remove the pointless Top div
+  $('#TOP').remove();
+  //remove random break
+  var $body = $('body.Info');
+  $body.children('br').remove();
+  
+  // make the body the wrapper
+  $body.css({
+    "margin": "0",
+  });
+  
+  var $navBar = $('.anchors');
+  var $navBarDiv = $('<div class="navBar">');
+  $navBar.wrap($navBarDiv);
+  $navBarDiv.css({
+    "position": "fixed",
+    "top": "0",
+    "left": "0",
+    "height": "100%",
+    "width": "150px",
+  });
+  
+  var $header = $('table.title');
+  var $headerDiv = $('<div class="navBar">');
+  $$header.wrap($headerDiv);
+  $headerDiv.css({
+    "grid-area": "header",
+  });
+  
+  var $content = $header.nextAll();
+  var $contentDiv = $('<div class="content">');
+  $content.wrapAll($contentDiv);
+  $contentDiv.css({
+    "grid-area": "content",
+  });
+
+  var $wrapper = $headerDiv.add($contentDiv);
+  var $wrapperDiv = $('<div class="wrapper">');
+  $wrapper.wrap($wrapperDiv);
+  $wrapperDiv.css({
+    "display": "grid",
+    "grid-template-columns": "150px 1fr",
+    "grid-gap": "10px",
+    "grid-template-areas":
+      `"header"
+      "content"`,
+  });
+  
+  
+}
+
 applyCss();
 navBar();
 styleTables();
+applyGrid();

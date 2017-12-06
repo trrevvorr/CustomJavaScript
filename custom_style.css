@@ -1,6 +1,7 @@
 
 body {
     margin: 0;
+    margin-left: 160px;
 }
 body.Info {
     font-family: "Roboto",sans-serif;

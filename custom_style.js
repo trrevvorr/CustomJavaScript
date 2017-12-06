@@ -196,8 +196,8 @@ function applyGrid() {
   });
   
   var $header = $('table.title');
-  var $headerDiv = $('<div class="navBar">');
-  $$header.wrap($headerDiv);
+  var $headerDiv = $('<div class="header">');
+  $header.wrap($headerDiv);
   $headerDiv.css({
     "grid-area": "header",
   });

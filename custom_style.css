@@ -1,7 +1,6 @@
 
 body {
     margin: 0;
-    margin-left: 160px;
 }
 body.Info {
     font-family: "Roboto",sans-serif;
@@ -9,12 +8,11 @@ body.Info {
     background-color: white;
 }
 
-table.title[style],
-table.titleText[style],
-td.title {
+.header {
     background-color: inherit !important;
     font-size: 1.5rem;
 }
+
 span.heading {
     display: inline-block;
     margin: 20px 0 10px;
@@ -143,10 +141,10 @@ div.anchors a:hover,
 
 .wrapper {
     position: relative;
-    left: 150px;
+    left: 160px;
     overflow-x: wrap;
     display: grid;
-    grid-template-columns: calc(100% - 80px);
+    grid-template-columns: calc(100% - 160px);
     grid-gap: 10px;
     grid-template-areas:
       "header"

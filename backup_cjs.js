@@ -34,10 +34,4 @@ function styleTables() {
     }
 }
 
-function navBar() {
-    // add the "DLG ######" to the nav bar
-    $('.anchors').prepend($('.title a').clone())
-}
-
-navBar();
 styleTables();

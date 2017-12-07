@@ -58,8 +58,7 @@ table {
 /* === BODY === */
 
 /* === NAV BAR === */
-.navBar,
-#ScrollLinks {
+.navBar {
     position: fixed;
     top: 0;
     left: 0;
@@ -88,8 +87,7 @@ table {
     text-decoration: none;
 }
 
-.navBar a[style],
-#ScrollLinks a[style] {
+.navBar a[style] {
     display: block !important;
 }
 
@@ -108,31 +106,9 @@ table {
     line-height: 1rem;
 }
 
-.navBar .navLink:hover a,
-#ScrollLinks a:hover {
+.navBar .navLink:hover a {
     background-color: white;
     color: #50719b;
-}
-
-
-#ScrollLinks span {
-    display: block;
-    padding: 8px 10px;
-    font-size: 1rem;
-    border-bottom: 1px solid #39577E;
-    text-align: left;
-}
-
-#ScrollLinks span a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: bold;
-    line-height: 1rem;
-}
-
-#ScrollLinks a[style] {
-    display: block !important;
 }
 
 /* === WRAPPER === */

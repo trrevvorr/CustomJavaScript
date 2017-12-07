@@ -87,29 +87,93 @@ table {
     text-decoration: none;
 }
 
-.navBar a[style] {
-    display: block !important;
-}
-
 .navBar .navLink {
     border-bottom: 1px solid #39577E;
+    text-align: left;
+    padding: 8px 10px;
+    /* width: 100%; */
+    display: grid;
+    overflow-x: hidden;
+    grid-template-columns: 20px auto;
+    grid-gap: 5px;
+    grid-template-areas: "icon   link";
 }
 
 .navBar .navLink a {
-    display: block !important;
-    text-align: left;
-    padding: 8px 10px;
+    grid-area: link;
     color: white;
     text-decoration: none;
     font-size: 1rem;
     font-weight: bold;
-    line-height: 1rem;
+    line-height: 20px;
 }
 
+.navBar .navLink:hover {
+    background-color: white
+}
 .navBar .navLink:hover a {
-    background-color: white;
     color: #50719b;
 }
+
+.navIcon {
+    grid-area: icon;
+    display:inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+.navIcon.GenInfo {
+    content:url('data:image/svg+xml; utf8, <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><path d="M85.5 109c-.7-15.5 8.3-47.8 8.3-47.8H70.3s-5.6 28-6.8 35-2.5 18.1-1.5 21c3.5 10.1 4.5 14 18.9 14s19.8-18.6 19.8-18.6-14.5 10.7-15.2-3.6zm-14-59.3l26 .3 4-19.7-26-.3z"></path><path d="M80 10c-38.7 0-70 31.3-70 70s31.3 70 70 70 70-31.3 70-70-31.3-70-70-70zm0 130c-33.1 0-60-26.9-60-60s26.9-60 60-60 60 26.9 60 60-26.9 60-60 60z"></path></svg>');
+}
+.navIcon.DueDateInfo {
+    content:url('data:image/svg+xml; utf8, <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" data-status="done"><g><path d="M120 30V10h-20v20H60V10H40v20H20v120h120V30h-20zm10 110H30V60h100v80z"></path><path d="M120 30V10h-20v20H60V10H40v20H20v30h120V30h-20zm6.5 56.5L105 107.9 83.5 86.5l-7 7L97.9 115l-21.4 21.5 7 7 21.5-21.4 21.5 21.4 7-7-21.4-21.5 21.4-21.5-7-7z"></path></g></svg>');
+}
+.navIcon.People {
+    content: url('data:image/svg+xml; utf8, <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" data-mnemonic="Group" data-status="done"><g><circle cx="80" cy="30" r="20"></circle><circle cx="35" cy="45" r="15"></circle><circle cx="125" cy="45" r="15"></circle><path d="M110 110V60H50v50h10v40h40v-40zm10-40v50h-10v20h30v-20h10V70zm-80 0H10v50h10v20h30v-20H40z"></path></g></svg>');
+}
+.navIcon.Performance {
+    content: url('data:image/svg+xml; utf8, <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" data-status="done"><g><path d="M63.1 99.3L50 60l30 30c11 0 20 9 20 20h45c-.8-26.8-9-50.4-28-64-20.1-14.4-53.8-14.4-73.9 0-19 13.6-27.2 37.3-28 64H60c0-3.9 1.2-7.6 3.1-10.7zM130 70l5 20-20-10 15-10zM90 40L80 60 70 40h20zM25 90l5-20 15 10-20 10zm120 20c0 1.6.1 3.2.1 4.8H15c0-1.6 0-3.2.1-4.8H10v10h140v-10h-5z"></path><path d="M145.1 114.8c0-1.6 0-3.2-.1-4.8H15.1c-.1 1.6-.1 3.2-.1 4.8h130.1z"></path></g></svg>');
+}
+.navIcon.AssociatedRecords {
+    content: url('data:image/svg+xml; utf8, <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><g><path d="M110 0H0v120h110zm-10 110H10V10h90z"></path><path d="M20 30h40v10H20zm0 20h70v10H20zm0 20h70v10H20z"></path><path d="M110 20v10h10v100H30v-10H20v20h110V20z" color="#000" overflow="visible"></path><path d="M130 40v10h10v100H50v-10H40v20h110V40z" color="#000" overflow="visible"></path></g></svg>');
+}
+.navIcon.Issues {
+    content: url('data:image/svg+xml; utf8, <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><g><path class="color--critical--fore" d="M80 0C35.8 0 0 35.8 0 80s35.8 80 80 80 80-35.8 80-80S124.2 0 80 0zM55.6 129c-5.5 0-9.9-4.3-9.9-9.7 0-5.3 4.5-9.7 9.9-9.7 5.5 0 9.9 4.3 9.9 9.7 0 5.4-4.4 9.7-9.9 9.7zm16.1-72l-16.5 46.1L38.7 57v-5.1c0-11.3 7.4-20.5 16.5-20.5s16.5 9.2 16.5 20.5V57zm32.9 72c-5.5 0-9.9-4.3-9.9-9.7 0-5.3 4.5-9.7 9.9-9.7s9.9 4.3 9.9 9.7c0 5.4-4.4 9.7-9.9 9.7zm16.1-72l-16.5 46.1L87.7 57v-5.1c0-11.3 7.4-20.5 16.5-20.5s16.5 9.2 16.5 20.5V57z"></path></g></svg>');
+}
+.navIcon.Notes {
+    content: url('data:image/svg+xml; utf8, <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><polygon class="icon__tan--no-stroke" points="20,20 20,140 90,140 90,100 90,90 100,90 140,90 140,20 "></polygon><path class="icon__utility--d-d-l" d="M50,90h30v10H50V90z M50,70h60v10H50V70z M50,50h60v10H50V50z"></path><g class="icon__tan--stroke-fill"><polygon points="100,140 140,100 100,100  "></polygon><path d="M106.9,20c-31.2,0-74.6-0.1-86.9,0v120h70v-10H30V30h100v60h10V20H106.9z"></path></g></svg>');
+}
+.navIcon.Objects {
+    content: url('data:image/svg+xml; utf8, <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" data-mnemonic="List" data-status="done"><path d="M60 70h70v20H60zm0-40h70v20H60zm0 80h70v20H60zM30 30h20v20H30zm0 40h20v20H30zm0 40h20v20H30z"></path></svg>');
+}
+.navIcon.PPTs {
+    content: url('data:image/svg+xml; utf8, <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><path d="M20 10v60h30V60H30V20h40v110H30V90h20V80H20v60h120V10H20zm110 40h-30v10h30v30h-30v10h30v30H80V20h50v30z"></path><path d="M40 30h20v20H40zm0 70h20v20H40z"></path></svg>');
+}
+.navIcon.Conversions {
+    content: url('data:image/svg+xml; utf8, <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" data-status="done"><path d="M110 0l45 45-45 45V60H40V30h70zM50 160L5 115l45-45v30h70v30H50z"></path></svg>');
+}
+.navIcon.DataPrep {
+    content: url('data:image/svg+xml; utf8, <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" data-mnemonic="More Horizontal" data-status="done"><circle cx="140" cy="80" r="15"></circle><circle cx="80" cy="80" r="15"></circle><circle cx="20" cy="80" r="15"></circle></svg>');
+}
+.navIcon.TriageInfo {
+    content: url('data:image/svg+xml; utf8, <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" data-mnemonic="More Horizontal" data-status="done"><circle cx="140" cy="80" r="15"></circle><circle cx="80" cy="80" r="15"></circle><circle cx="20" cy="80" r="15"></circle></svg>');
+}
+.navIcon.DocTriage {
+    content: url('data:image/svg+xml; utf8, <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" data-mnemonic="More Horizontal" data-status="done"><circle cx="140" cy="80" r="15"></circle><circle cx="80" cy="80" r="15"></circle><circle cx="20" cy="80" r="15"></circle></svg>');
+}
+.navIcon.SVN_Information {
+    content: url('data:image/svg+xml; utf8, <svg fill="white" xmlns="http://www.w3.org/2000/svg" height="1024" width="640"><path d="M512 192c-70.625 0-128 57.344-128 128 0 47.219 25.875 88.062 64 110.281V448c0 0 0 128-128 128-53.062 0-94.656 11.375-128 28.812V302.28099999999995c38.156-22.219 64-63.062 64-110.281 0-70.656-57.344-128-128-128S0 121.34400000000005 0 192c0 47.219 25.844 88.062 64 110.281V721.75C25.844 743.938 0 784.75 0 832c0 70.625 57.344 128 128 128s128-57.375 128-128c0-33.5-13.188-63.75-34.25-86.625C240.375 722.5 270.656 704 320 704c254 0 256-256 256-256v-17.719c38.125-22.219 64-63.062 64-110.281C640 249.34400000000005 582.625 192 512 192zM128 128c35.406 0 64 28.594 64 64s-28.594 64-64 64-64-28.594-64-64S92.594 128 128 128zM128 896c-35.406 0-64-28.625-64-64 0-35.312 28.594-64 64-64s64 28.688 64 64C192 867.375 163.406 896 128 896zM512 384c-35.375 0-64-28.594-64-64s28.625-64 64-64 64 28.594 64 64S547.375 384 512 384z"/></svg>');
+}
+.navIcon.Server_SVN_Information {
+    content: url('data:image/svg+xml; utf8, <svg fill="white" xmlns="http://www.w3.org/2000/svg" height="1024" width="640"><path d="M512 192c-70.625 0-128 57.344-128 128 0 47.219 25.875 88.062 64 110.281V448c0 0 0 128-128 128-53.062 0-94.656 11.375-128 28.812V302.28099999999995c38.156-22.219 64-63.062 64-110.281 0-70.656-57.344-128-128-128S0 121.34400000000005 0 192c0 47.219 25.844 88.062 64 110.281V721.75C25.844 743.938 0 784.75 0 832c0 70.625 57.344 128 128 128s128-57.375 128-128c0-33.5-13.188-63.75-34.25-86.625C240.375 722.5 270.656 704 320 704c254 0 256-256 256-256v-17.719c38.125-22.219 64-63.062 64-110.281C640 249.34400000000005 582.625 192 512 192zM128 128c35.406 0 64 28.594 64 64s-28.594 64-64 64-64-28.594-64-64S92.594 128 128 128zM128 896c-35.406 0-64-28.625-64-64 0-35.312 28.594-64 64-64s64 28.688 64 64C192 867.375 163.406 896 128 896zM512 384c-35.375 0-64-28.594-64-64s28.625-64 64-64 64 28.594 64 64S547.375 384 512 384z"/></svg>');
+}
+.navIcon.LogHist {
+    content: url('data:image/svg+xml; utf8, <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><path d="M80 20c-24.3 0-45.3 14.5-54.7 35.3L10 40v50h50L41 71c4.1-17.7 20-31 39-31 22.1 0 40 17.9 40 40s-17.9 40-40 40c-11 0-21-4.5-28.3-11.7l-14.2 14.2C48.4 133.3 63.4 140 80 140c33.1 0 60-26.9 60-60s-26.9-60-60-60z"></path><path d="M80 100h10V50L80 60v30H60l10 10z"></path></svg>');
+}
+.navIcon.Extended_Properties {
+    content: url('data:image/svg+xml; utf8, <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" data-mnemonic="More Horizontal" data-status="done"><circle cx="140" cy="80" r="15"></circle><circle cx="80" cy="80" r="15"></circle><circle cx="20" cy="80" r="15"></circle></svg>');
+}
+
 
 /* === WRAPPER === */
 

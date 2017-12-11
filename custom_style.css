@@ -108,10 +108,12 @@ table {
     line-height: 20px;
 }
 
-.navBar .navLink:hover {
+.navBar .navLink:hover,
+.navBar .navLink.active {
     background-color: white
 }
-.navBar .navLink:hover a {
+.navBar .navLink:hover a,
+.navBar .navLink.active a {
     color: #50719b;
 }
 
